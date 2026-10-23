@@ -1,580 +1,624 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Meta Garments — garment supply, product enquiries and apparel customisation for businesses.">
-  <title>Meta Garments | Garment Supply</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Meta Garments is an Indian garment business focused on shirt supply, customisation and long-term wholesale partnerships.">
+<title>Meta Garments | Garment Supply</title>
 
-  <style>
-    :root {
-      --black: #202020;
-      --grey: #666666;
-      --light-grey: #eeeeee;
-      --white: #ffffff;
-      --page-width: 1160px;
-    }
+<style>
+:root {
+    --black: #202020;
+    --grey: #666666;
+    --light-grey: #eeeeee;
+    --white: #ffffff;
+    --border: #dedede;
+    --max-width: 1160px;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--black);
-      background: var(--white);
-      line-height: 1.7;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.7;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.container {
+    width: min(90%, var(--max-width));
+    margin: 0 auto;
+}
 
-    .container {
-      width: min(var(--page-width), 90%);
-      margin: 0 auto;
-    }
+header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-    header {
-      background: #fff;
-      border-bottom: 1px solid #dedede;
-    }
+.nav {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
 
-    nav {
-      min-height: 82px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 16px 0;
-    }
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    align-items: center;
+}
 
-    .logo small {
-      display: block;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 3px;
-      color: var(--grey);
-    }
+nav a {
+    font-size: 13px;
+    color: var(--grey);
+}
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: 13px;
-      font-weight: 600;
-    }
+nav a:hover,
+.text-link:hover {
+    color: var(--black);
+}
 
-    .nav-links a:hover,
-    .text-link:hover {
-      text-decoration: underline;
-    }
+.hero {
+    padding: 105px 0 100px;
+    background: #f7f7f7;
+}
 
-    section {
-      padding: 76px 0;
-      scroll-margin-top: 20px;
-    }
+.eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 14px;
+}
 
-    .hero {
-      padding: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 440px;
-      background: #f4f4f4;
-    }
+.hero h1 {
+    max-width: 780px;
+    font-size: clamp(36px, 5.5vw, 65px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
 
-    .hero-copy {
-      padding: 65px max(5vw, calc((100vw - var(--page-width)) / 2));
-      padding-right: 35px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
+.hero p {
+    max-width: 620px;
+    color: var(--grey);
+    font-size: 17px;
+    margin-bottom: 30px;
+}
 
-    .eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-      color: var(--grey);
-      margin-bottom: 14px;
-    }
+.button {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 13px 23px;
+    font-size: 13px;
+    font-weight: 700;
+}
 
-    h1 {
-      font-size: clamp(36px, 4.5vw, 58px);
-      line-height: 1.12;
-      letter-spacing: -1.5px;
-      margin-bottom: 20px;
-    }
+.button:hover {
+    background: #444444;
+}
 
-    .hero-copy > p:not(.eyebrow) {
-      max-width: 520px;
-      color: #555;
-      margin-bottom: 26px;
-    }
+section {
+    padding: 78px 0;
+}
 
-    .hero-image {
-      min-height: 440px;
-      background: #e5e5e5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 25px;
-      color: #555;
-    }
+.section-heading {
+    margin-bottom: 32px;
+}
 
-    .photo-placeholder {
-      width: 100%;
-      min-height: 230px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
-      background: #eeeeee;
-      color: #555;
-      text-align: center;
-      font-size: 14px;
-    }
+.section-heading h2,
+.about-content h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+}
 
-    .button {
-      display: inline-block;
-      background: var(--black);
-      color: #fff;
-      padding: 12px 20px;
-      font-size: 13px;
-      font-weight: 700;
-      border: 1px solid var(--black);
-      transition: background 0.2s;
-    }
+.section-heading p,
+.section-copy {
+    color: var(--grey);
+    max-width: 760px;
+    font-size: 15px;
+}
 
-    .button:hover {
-      background: #444;
-    }
+.catalogue {
+    background: var(--white);
+}
 
-    .button-light {
-      background: #fff;
-      color: var(--black);
-    }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+}
 
-    .button-light:hover {
-      background: #eeeeee;
-    }
+.product-card {
+    min-width: 0;
+}
 
-    .section-heading {
-      max-width: 700px;
-      margin-bottom: 30px;
-    }
+.product-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #f0f0f0;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
 
-    h2 {
-      font-size: clamp(28px, 3.5vw, 42px);
-      line-height: 1.2;
-      margin-bottom: 15px;
-      letter-spacing: -0.6px;
-    }
-
-    .section-heading p,
-    .section-copy {
-      color: var(--grey);
-      font-size: 15px;
-    }
-
-    .about-grid {
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-.factory-grid {
+.product-label {
+    padding-top: 9px;
+    font-size: 12px;
+    color: var(--grey);
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 3px;
+}
+
+.customisation {
+    background: #f7f7f7;
+}
+
+.custom-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 45px;
+    gap: 50px;
+    align-items: start;
 }
+
+.custom-grid h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+.custom-grid p {
+    color: var(--grey);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.custom-list {
+    list-style: none;
+}
+
+.custom-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.about {
+    background: var(--white);
+}
+
+.about-content {
+    max-width: 100%;
+}
+
+.about-intro {
+    max-width: 850px;
+    margin-bottom: 34px;
+}
+
+.priorities {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 28px 0 38px;
+}
+
+.priority {
+    padding: 23px;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+.priority-number {
+    font-size: 12px;
+    color: var(--grey);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.priority h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.priority p,
+.about-extra p {
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.about-extra {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    margin-top: 30px;
+}
+
+.about-extra h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.manufacturing {
+    background: #f7f7f7;
+}
+
+.manufacturing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.workplace-placeholder {
+    min-height: 300px;
+    background: #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    color: var(--grey);
+}
+
+.workplace-placeholder strong {
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.workplace-placeholder p {
+    font-size: 13px;
+}
+
+.contact {
+    background: var(--black);
+    color: var(--white);
+}
+
+.contact .eyebrow,
+.contact .section-copy {
+    color: #c7c7c7;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 28px;
+}
+
+.contact-details p {
+    color: #dddddd;
+    font-size: 14px;
+}
+
+footer {
+    padding: 24px 0;
+    border-top: 1px solid #444;
+    background: var(--black);
+    color: #bbbbbb;
+    font-size: 12px;
+}
+
+@media (max-width: 850px) {
+    .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .about-image,
-    .factory-image {
-      min-height: 300px;
-      background: #eeeeee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 25px;
-      color: #555;
+    .priorities {
+        grid-template-columns: 1fr;
     }
 
-    .text-link {
-      display: inline-block;
-      margin-top: 20px;
-      font-size: 13px;
-      font-weight: 700;
-      border-bottom: 1px solid #999;
-      padding-bottom: 3px;
+    .custom-grid,
+    .manufacturing-grid,
+    .about-extra {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .catalogue {
-      background: #f6f6f6;
+    nav {
+        gap: 12px 17px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    section {
+        padding: 55px 0;
     }
 
     .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
     }
 
-    .product-card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
+    .priority {
+        padding: 19px;
     }
-
-    .product-image {
-      min-height: 210px;
-      background: #eeeeee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      text-align: center;
-      color: #555;
-      font-size: 13px;
-    }
-
-    .product-info {
-      padding: 23px;
-    }
-
-    .product-info h3 {
-      font-size: 19px;
-      margin-bottom: 8px;
-    }
-
-    .product-info p {
-      color: var(--grey);
-      font-size: 14px;
-    }
-
-    .customise-box {
-      border: 1px solid #dddddd;
-      padding: 42px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .customise-box p {
-      color: var(--grey);
-      max-width: 700px;
-    }
-
-    .factory {
-      background: #f6f6f6;
-    }
-
-    .factory-image {
-      min-height: 340px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .contact-card {
-      border: 1px solid #dedede;
-      padding: 26px;
-    }
-
-    .contact-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .contact-card p {
-      color: var(--grey);
-      font-size: 14px;
-    }
-
-    footer {
-      background: #202020;
-      color: #fff;
-      padding: 27px 0;
-      font-size: 12px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    footer p {
-      color: #cccccc;
-    }
-
-    @media (max-width: 760px) {
-      nav {
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        gap: 12px 16px;
-      }
-
-      .hero,
-      .about-grid,
-      .factory-grid,
-      .contact-grid,
-      .customise-box {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        padding: 55px 5%;
-      }
-
-      .hero-image {
-        min-height: 260px;
-      }
-
-      section {
-        padding: 55px 0;
-      }
-
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .customise-box {
-        padding: 27px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <nav class="container">
-      <a href="#home" class="logo">
-        META GARMENTS
-        <small>GARMENT SUPPLY</small>
-      </a>
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#products">Products</a>
-        <a href="#customise">Customisation</a>
-        <a href="#factory">Manufacturing</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
+<header>
+    <div class="container nav">
+        <a class="logo" href="#home">META GARMENTS</a>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">Meta Garments · Business Enquiries</p>
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#products">Catalogue</a>
+            <a href="#customisation">Customisation</a>
+            <a href="#about">About Us</a>
+            <a href="#manufacturing">Manufacturing</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="container">
+        <p class="eyebrow">Garment Supply</p>
         <h1>Garment supply for your business requirements.</h1>
         <p>
-          Explore our garment range, learn about our business,
-          and contact our team to discuss your requirements.
+            Meta Garments focuses on shirt supply, customisation,
+            and developing long-term relationships with wholesale buyers.
         </p>
         <a class="button" href="#products">Explore Products</a>
-      </div>
+    </div>
+</section>
 
-      <div class="hero-image">
-        <div>
-          <strong>Factory photograph</strong>
-          <p>Add your actual factory image here.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container about-grid">
-        <div>
-          <p class="eyebrow">About Us</p>
-          <h2>Get to know Meta Garments.</h2>
-          Meta Garments is an Indian garment business focused on supplying shirts to wholesalers and businesses serving the US market. We believe that a strong business relationship is built on competitive pricing, dependable supply planning, and a clear understanding of our clients' requirements.
-</p>
-
-<h3>Our Three Major Priorities</h3>
-
-<h4>1. Competitive Pricing</h4>
-<p>We understand that pricing plays an important role in the success of a wholesale business. Our aim is to offer competitive rates while meeting agreed specifications and quality requirements. Depending on the product, fabric, order quantity, and commercial terms, we aim to offer prices up to 20% below comparable market rates on qualifying orders.</p>
-
-<h4>2. Predictable and Planned Supply</h4>
-<p>We recognise that wholesalers need to plan their purchases around customer demand, inventory, and business commitments. Our goal is to understand each client's required quantities, product specifications, and preferred schedules, then work towards practical production and supply arrangements.</p>
-
-<h4>3. Long-Term Business Partnerships</h4>
-<p>Our primary objective is to establish lasting, contract-based relationships rather than focus solely on one-time transactions. We want to understand the businesses we work with and develop supply arrangements that can grow alongside them through clear communication and mutually agreed expectations.</p>
-
-<h3>Customisation Around Your Requirements</h3>
-<p>We welcome discussions about customised shirts, including fabric selection, colours, collars, cuffs, and other design details. Clients can share a reference design or sample so we can understand their expectations and assess the feasibility of their requirements.</p>
-
-<h3>Our Approach to Business</h3>
-<p>We value open discussions, clear specifications, realistic planning, and mutually agreed terms. We believe a dependable supplier should understand a client's requirements before making commitments.</p>
-
-<h3>Building Something That Lasts</h3>
-<p>Our objective extends beyond supplying individual orders. We want to develop lasting relationships with wholesalers who value competitive pricing, predictable supply planning, and a supplier willing to understand their needs. We recognise that trust must be earned through actions and consistency over time.</p>
-
-<p><strong>Our objective is straightforward: to become a dependable shirt supply partner that your business can build a long-term relationship with.</strong></p>
-          <a class="text-link" href="#contact">Learn More About Us →</a>
-        </div>
-
-        <div class="about-image">
-          <div>
-            <strong>Our workplace</strong>
-            <p>Add a genuine photograph of your operations here.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="catalogue" id="products">
-      <div class="container">
+<section class="catalogue" id="products">
+    <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Product Catalogue</p>
-          <h2>Explore our garment range.</h2>
-          <p>
-            Browse these product categories and contact us to discuss
-            available styles, fabrics and order requirements.
-          </p>
+            <p class="eyebrow">Our Collection</p>
+            <h2>Formal Shirts</h2>
+            <p>
+                Explore our formal shirt collection. Product specifications
+                and customisation requirements can be discussed with our team.
+            </p>
         </div>
 
         <div class="product-grid">
-          <article class="product-card">
-            <div class="product-image">Add formal shirt photograph</div>
-            <div class="product-info">
-              <h3>Formal Shirts</h3>
-              <p>Discuss shirt styles, fabric options and specifications.</p>
-              <a class="text-link" href="#contact">Enquire About Shirts →</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image">Add T-shirt photograph</div>
-            <div class="product-info">
-              <h3>T-Shirts</h3>
-              <p>Discuss available styles and requirements for your order.</p>
-              <a class="text-link" href="#contact">Enquire About T-Shirts →</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image">Add another product photograph</div>
-            <div class="product-info">
-              <h3>Other Garments</h3>
-              <p>Contact us to discuss other garment categories.</p>
-              <a class="text-link" href="#contact">Make an Enquiry →</a>
-            </div>
-          </article>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-01.jpg" alt="Formal shirt 01" loading="lazy"></div><p class="product-label">Formal Shirt 01</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-02.jpg" alt="Formal shirt 02" loading="lazy"></div><p class="product-label">Formal Shirt 02</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-03.jpg" alt="Formal shirt 03" loading="lazy"></div><p class="product-label">Formal Shirt 03</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-04.jpg" alt="Formal shirt 04" loading="lazy"></div><p class="product-label">Formal Shirt 04</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-05.jpg" alt="Formal shirt 05" loading="lazy"></div><p class="product-label">Formal Shirt 05</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-06.jpg" alt="Formal shirt 06" loading="lazy"></div><p class="product-label">Formal Shirt 06</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-07.jpg" alt="Formal shirt 07" loading="lazy"></div><p class="product-label">Formal Shirt 07</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-08.jpg" alt="Formal shirt 08" loading="lazy"></div><p class="product-label">Formal Shirt 08</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-09.jpg" alt="Formal shirt 09" loading="lazy"></div><p class="product-label">Formal Shirt 09</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-10.jpg" alt="Formal shirt 10" loading="lazy"></div><p class="product-label">Formal Shirt 10</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-11.jpg" alt="Formal shirt 11" loading="lazy"></div><p class="product-label">Formal Shirt 11</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-12.jpg" alt="Formal shirt 12" loading="lazy"></div><p class="product-label">Formal Shirt 12</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-13.jpg" alt="Formal shirt 13" loading="lazy"></div><p class="product-label">Formal Shirt 13</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-14.jpg" alt="Formal shirt 14" loading="lazy"></div><p class="product-label">Formal Shirt 14</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-15.jpg" alt="Formal shirt 15" loading="lazy"></div><p class="product-label">Formal Shirt 15</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-16.jpg" alt="Formal shirt 16" loading="lazy"></div><p class="product-label">Formal Shirt 16</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-17.jpg" alt="Formal shirt 17" loading="lazy"></div><p class="product-label">Formal Shirt 17</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-18.jpg" alt="Formal shirt 18" loading="lazy"></div><p class="product-label">Formal Shirt 18</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-19.jpg" alt="Formal shirt 19" loading="lazy"></div><p class="product-label">Formal Shirt 19</p></div>
+            <div class="product-card"><div class="product-image"><img src="shirt-images/shirt-20.jpg" alt="Formal shirt 20" loading="lazy"></div><p class="product-label">Formal Shirt 20</p></div>
         </div>
 
-        <a class="text-link" href="#contact">Looking for something specific? Contact Us →</a>
-      </div>
-    </section>
+        <a class="text-link" href="#contact">Enquire About Our Collection →</a>
+    </div>
+</section>
 
-    <section id="customise">
-      <div class="container">
-        <div class="customise-box">
-          <div>
-            <p class="eyebrow">Garment Customisation</p>
+<section class="customisation" id="customisation">
+    <div class="container custom-grid">
+        <div>
+            <p class="eyebrow">Made Around Your Needs</p>
             <h2>Have a specific garment in mind?</h2>
             <p>
-              Tell us about your preferred fabric, colour, collar,
-              cuffs and design requirements. Contact our team to
-              discuss available options and detailed specifications.
+                Every business has its own product requirements.
+                We welcome discussions about shirt customisation and
+                will assess the details with you before confirming feasibility.
             </p>
-            <a class="text-link" href="#contact">Learn More About Customisation →</a>
-          </div>
-
-          <a class="button" href="#contact">Discuss Your Requirements</a>
+            <a class="text-link" href="#contact">Discuss Your Requirements →</a>
         </div>
-      </div>
-    </section>
 
-    <section class="factory" id="factory">
-      <div class="container factory-grid">
         <div>
-          <p class="eyebrow">Manufacturing & Operations</p>
-          <h2>See more of how we work.</h2>
-          <p class="section-copy">
-            Learn more about the operations and processes relevant
-            to our garment business. Photographs and videos can help
-            buyers understand our work more clearly.
-          </p>
-          <a class="text-link" href="#contact">Learn More About Our Operations →</a>
+            <ul class="custom-list">
+                <li>Fabric and material selection</li>
+                <li>Colours and patterns</li>
+                <li>Collars and cuffs</li>
+                <li>Design and finishing details</li>
+                <li>Reference samples and specifications</li>
+            </ul>
         </div>
-
-        <div class="factory-image">
-          <div>
-            <strong>Manufacturing photographs and videos</strong>
-            <p>Add genuine images of the relevant production processes here.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Contact Us</p>
-          <h2>Let's discuss your requirements.</h2>
-          <p>
-            Contact Meta Garments to enquire about products,
-            specifications and potential business opportunities.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Business Email</h3>
-            <p>Add your official business email address before publishing.</p>
-          </div>
-
-          <div class="contact-card">
-            <h3>Phone & WhatsApp</h3>
-            <p>Add your business contact number before publishing.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <strong>META GARMENTS</strong>
-      <p>© <span id="year"></span> Meta Garments. All rights reserved.</p>
     </div>
-  </footer>
+</section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<section class="about" id="about">
+    <div class="container about-content">
+        <div class="about-intro">
+            <p class="eyebrow">About Us</p>
+            <h2>Get to Know Meta Garments.</h2>
+            <p class="section-copy">
+                Meta Garments is an Indian garment business focused on
+                supplying shirts to wholesalers and businesses serving the
+                US market. We aim to build dependable supply relationships
+                through clear communication, competitive pricing, and an
+                understanding of each client's requirements.
+            </p>
+        </div>
+
+        <h3>Our Three Major Priorities</h3>
+
+        <div class="priorities">
+            <article class="priority">
+                <p class="priority-number">01 / PRIORITY</p>
+                <h3>Competitive Pricing</h3>
+                <p>
+                    We aim to offer competitive rates while meeting agreed
+                    specifications and quality requirements. Pricing depends
+                    on the fabric, product details, order quantity, and
+                    commercial terms.
+                </p>
+            </article>
+
+            <article class="priority">
+                <p class="priority-number">02 / PRIORITY</p>
+                <h3>Predictable and Planned Supply</h3>
+                <p>
+                    We work with clients to understand required quantities,
+                    product specifications, and preferred schedules, then
+                    discuss practical production and supply arrangements.
+                </p>
+            </article>
+
+            <article class="priority">
+                <p class="priority-number">03 / PRIORITY</p>
+                <h3>Long-Term Partnerships</h3>
+                <p>
+                    Our objective is to develop lasting, contract-based
+                    relationships founded on clear communication, mutual
+                    understanding, and agreed expectations.
+                </p>
+            </article>
+        </div>
+
+        <div class="about-extra">
+            <div>
+                <h3>Customisation Around Your Requirements</h3>
+                <p>
+                    Clients can share reference designs or samples, along
+                    with their preferred fabrics, colours, collars, cuffs,
+                    and other details. We discuss the requirements and
+                    assess what is feasible before proceeding.
+                </p>
+            </div>
+
+            <div>
+                <h3>Building Something That Lasts</h3>
+                <p>
+                    We want to build long-term working relationships with
+                    wholesalers who value dependable communication and
+                    carefully planned supply arrangements. We recognise
+                    that trust is earned through actions and consistency.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="manufacturing" id="manufacturing">
+    <div class="container manufacturing-grid">
+        <div>
+            <p class="eyebrow">Our Process</p>
+            <h2>See more of how we work.</h2>
+            <p class="section-copy">
+                Clear specifications and communication are important
+                throughout the garment supply process. We aim to discuss
+                requirements, practical arrangements, and agreed expectations
+                with every client.
+            </p>
+        </div>
+
+        <div class="workplace-placeholder">
+            <strong>Our Workplace</strong>
+            <p>
+                Replace this placeholder with a genuine photograph of
+                your workplace or production operations.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <p class="eyebrow">Contact Us</p>
+        <h2>Let's discuss your requirements.</h2>
+        <p class="section-copy">
+            Contact us to discuss shirt specifications, customisation,
+            wholesale enquiries, and potential long-term supply arrangements.
+        </p>
+
+        <div class="contact-details">
+            <p>Email: Add your business email</p>
+            <p>Phone / WhatsApp: Add your business number</p>
+            <p>Business: Meta Garments, India</p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        © <span id="year"></span> Meta Garments. All rights reserved.
+    </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
