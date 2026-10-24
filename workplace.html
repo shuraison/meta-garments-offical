@@ -6,180 +6,251 @@
 
     <title>Our Workplace | Meta Garments</title>
 
+    <meta name="description"
+          content="Explore the garment production process, from fabric storage and cutting to stitching, finishing and garment storage at Meta Garments.">
+
     <style>
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             color: #171717;
             background: #ffffff;
             line-height: 1.7;
         }
 
-        header {
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .site-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 26px 7%;
+            padding: 25px 7%;
             border-bottom: 1px solid #eeeeee;
+            gap: 20px;
         }
 
         .logo {
-            color: #171717;
             font-size: 21px;
             font-weight: 800;
-            text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.7px;
+            white-space: nowrap;
         }
 
-        nav a {
-            color: #444444;
-            text-decoration: none;
-            margin-left: 24px;
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 25px;
             font-size: 13px;
+            color: #555555;
         }
 
-        .intro {
-            padding: 100px 7% 65px;
-            max-width: 1050px;
+        .navigation a:hover {
+            color: #000000;
+        }
+
+        .hero {
+            padding: 100px 8% 75px;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .eyebrow {
-            font-size: 12px;
-            letter-spacing: 3px;
-            font-weight: bold;
-            color: #777777;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
             text-transform: uppercase;
+            color: #666666;
+            margin-bottom: 24px;
         }
 
-        h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1.08;
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.05;
             letter-spacing: -3px;
-            margin: 20px 0;
+            max-width: 850px;
+            margin-bottom: 28px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: #666666;
+            font-size: 17px;
+        }
+
+        .intro {
+            padding: 35px 8% 75px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .intro h2 {
+            font-size: 27px;
+            margin-bottom: 15px;
+            letter-spacing: -0.7px;
         }
 
         .intro p {
-            max-width: 680px;
-            font-size: 16px;
+            max-width: 760px;
             color: #666666;
+        }
+
+        .gallery-section {
+            padding: 0 8% 100px;
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .gallery-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .gallery-heading h2 {
+            font-size: 32px;
+            letter-spacing: -1px;
+        }
+
+        .gallery-heading p {
+            font-size: 13px;
+            color: #777777;
         }
 
         .gallery {
-            padding: 20px 7% 100px;
-        }
-
-        .photo-card {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 55px;
-            align-items: center;
-            padding: 55px 0;
-            border-bottom: 1px solid #eeeeee;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 38px 28px;
         }
 
-        .photo-card:nth-child(even) .photo {
-            order: 2;
+        .gallery-card {
+            min-width: 0;
         }
 
-        .photo {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            background: #f3f3f3;
+        .gallery-card img {
             display: block;
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background: #f2f2f2;
         }
 
-        .number {
-            font-size: 12px;
-            letter-spacing: 2px;
-            color: #888888;
+        .gallery-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 17px;
+            margin-bottom: 5px;
         }
 
-        h2 {
-            font-size: 32px;
-            line-height: 1.2;
-            letter-spacing: -1px;
-            margin: 12px 0 18px;
-        }
-
-        .description {
-            font-size: 15px;
-            color: #666666;
+        .gallery-card p {
+            font-size: 14px;
+            color: #6b6b6b;
+            max-width: 500px;
         }
 
         .closing {
+            padding: 75px 8%;
             background: #f6f6f6;
-            padding: 75px 7%;
             text-align: center;
         }
 
         .closing h2 {
-            font-size: 38px;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
         }
 
         .closing p {
             color: #666666;
-            max-width: 600px;
-            margin: 0 auto 25px;
+            max-width: 650px;
+            margin: 0 auto 28px;
         }
 
         .button {
             display: inline-block;
+            padding: 14px 24px;
             background: #171717;
             color: #ffffff;
-            text-decoration: none;
-            padding: 14px 24px;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid #171717;
+            transition: background 0.2s, color 0.2s;
         }
 
-        footer {
-            padding: 25px 7%;
+        .button:hover {
+            background: #ffffff;
+            color: #171717;
+        }
+
+        .site-footer {
+            padding: 28px 7%;
             text-align: center;
-            color: #777777;
             font-size: 12px;
+            color: #777777;
             border-top: 1px solid #eeeeee;
         }
 
         @media (max-width: 700px) {
-            header {
+            .site-header {
                 align-items: flex-start;
                 flex-direction: column;
-                gap: 15px;
+                padding: 22px 6%;
             }
 
-            nav a {
-                margin: 0 12px 0 0;
-                display: inline-block;
+            .navigation {
+                flex-wrap: wrap;
+                gap: 12px 18px;
+            }
+
+            .hero {
+                padding: 70px 6% 45px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.8px;
             }
 
             .intro {
-                padding-top: 65px;
+                padding: 30px 6% 55px;
             }
 
-            h1 {
-                letter-spacing: -1.5px;
+            .gallery-section {
+                padding: 0 6% 65px;
             }
 
-            .photo-card {
+            .gallery-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .gallery {
                 grid-template-columns: 1fr;
-                gap: 22px;
-                padding: 38px 0;
+                gap: 32px;
             }
 
-            .photo-card:nth-child(even) .photo {
-                order: 0;
+            .gallery-card img {
+                height: auto;
+                aspect-ratio: 4 / 3;
             }
 
-            .photo {
-                height: 280px;
-            }
-
-            h2 {
-                font-size: 28px;
+            .closing {
+                padding: 60px 6%;
             }
         }
     </style>
@@ -187,150 +258,228 @@
 
 <body>
 
-<header>
-    <a class="logo" href="index.html">META GARMENTS</a>
+    <!-- HEADER -->
+    <header class="site-header">
+        <a class="logo" href="index.html">META GARMENTS</a>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="index.html#collection">Collection</a>
-        <a href="index.html#customisation">Customisation</a>
-        <a href="index.html#about">About Us</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+        <nav class="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#collection">Our Collection</a>
+            <a href="index.html#customisation">Customisation</a>
+            <a href="index.html#about">About Us</a>
+            <a href="workplace.html">Our Workplace</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<section class="intro">
-    <div class="eyebrow">Our Workplace</div>
 
-    <h1>The work behind every requirement.</h1>
+    <!-- INTRODUCTION -->
+    <main>
+        <section class="hero">
+            <p class="eyebrow">Inside Meta Garments</p>
 
-    <p>
-        Every garment passes through a series of practical steps,
-        from fabric selection and cutting to stitching, finishing
-        and packing. Explore the processes and working environments
-        behind garment production.
-    </p>
-</section>
+            <h1>Behind every garment, there is a process.</h1>
 
-<main class="gallery">
-
-    <section class="photo-card">
-        <img class="photo" src="workplace-images/fabric-storage.jpg"
-             alt="Fabric rolls arranged in storage">
-
-        <div>
-            <div class="number">01 / MATERIALS</div>
-            <h2>Fabric Storage</h2>
-            <p class="description">
-                Fabric is stored and organised before it moves into
-                production. Suitable material selection is an
-                important part of meeting garment requirements.
+            <p class="hero-description">
+                From fabric selection and cutting to stitching, finishing
+                and storage, every stage plays a role in bringing a garment
+                together. Take a closer look at the work behind garment
+                production.
             </p>
-        </div>
-    </section>
+        </section>
 
-    <section class="photo-card">
-        <img class="photo" src="workplace-images/fabric-cutting.jpg"
-             alt="Fabric layers being cut">
 
-        <div>
-            <div class="number">02 / PREPARATION</div>
-            <h2>Fabric Cutting</h2>
-            <p class="description">
-                Fabric layers are prepared and cut into garment
-                components according to the required patterns
-                and measurements.
+        <!-- PRODUCTION OVERVIEW -->
+        <section class="intro">
+            <h2>The work behind every requirement.</h2>
+
+            <p>
+                Garment production involves careful handling of materials,
+                attention to construction, and coordination across different
+                stages of work. These photographs offer a look at the
+                processes and working environments involved in garment
+                manufacturing and preparation.
             </p>
-        </div>
-    </section>
+        </section>
 
-    <section class="photo-card">
-        <img class="photo" src="workplace-images/stitching-unit.jpg"
-             alt="Garment stitching production floor">
 
-        <div>
-            <div class="number">03 / CONSTRUCTION</div>
-            <h2>Stitching Unit</h2>
-            <p class="description">
-                Cut components are assembled through stitching,
-                bringing the garment design together piece by piece.
+        <!-- FACTORY PHOTO GALLERY -->
+        <section class="gallery-section">
+            <div class="gallery-heading">
+                <div>
+                    <p class="eyebrow">Our Production Process</p>
+                    <h2>From Fabric to Finished Garment</h2>
+                </div>
+
+                <p>A closer look at the work behind the product.</p>
+            </div>
+
+
+            <div class="gallery">
+
+                <!-- PHOTO 1 -->
+                <article class="gallery-card">
+                    <img
+                        src="workplace-images/Screenshot_20261025-021616.png"
+                        alt="Fabric rolls arranged in storage racks"
+                        loading="lazy">
+
+                    <h3>Fabric Storage</h3>
+
+                    <p>
+                        Fabric rolls organised and stored for garment
+                        production requirements.
+                    </p>
+                </article>
+
+
+                <!-- PHOTO 2 -->
+                <article class="gallery-card">
+                    <img
+                        src="workplace-images/Screenshot_20261025-021942.png"
+                        alt="Fabric layers being cut using industrial cutting equipment"
+                        loading="lazy">
+
+                    <h3>Precision Cutting</h3>
+
+                    <p>
+                        Layers of fabric are cut into the required shapes
+                        before moving to the next stage.
+                    </p>
+                </article>
+
+
+                <!-- PHOTO 3 -->
+                <article class="gallery-card">
+                    <img
+                        src="workplace-images/Screenshot_20261025-022008.png"
+                        alt="Fabric layers prepared for garment cutting"
+                        loading="lazy">
+
+                    <h3>Fabric Preparation</h3>
+
+                    <p>
+                        Preparing fabric accurately helps establish the
+                        foundation for garment construction.
+                    </p>
+                </article>
+
+
+                <!-- PHOTO 4 -->
+                <article class="gallery-card">
+                    <img
+                        src="workplace-images/Screenshot_20261025-022249.png"
+                        alt="Garment production floor with sewing machines"
+                        loading="lazy">
+
+                    <h3>Stitching & Production</h3>
+
+                    <p>
+                        Sewing operations bring individual garment
+                        components together.
+                    </p>
+                </article>
+
+
+                <!-- PHOTO 5 -->
+                <article class="gallery-card">
+                    <img
+                        src="workplace-images/Screenshot_20261025-022459.png"
+                        alt="Garment fabric being handled at a production workstation"
+                        loading="lazy">
+
+                    <h3>Garment Handling</h3>
+
+                    <p>
+                        Garment components are handled and prepared
+                        throughout the production process.
+                    </p>
+                </article>
+
+
+                <!-- PHOTO 6 -->
+                <article class="gallery-card">
+                    <img
+                        src="workplace-images/Screenshot_20261025-022712.png"
+                        alt="Garment workers working at sewing stations"
+                        loading="lazy">
+
+                    <h3>Garment Construction</h3>
+
+                    <p>
+                        Different stitching operations contribute to the
+                        construction of the finished garment.
+                    </p>
+                </article>
+
+
+                <!-- PHOTO 7 -->
+                <article class="gallery-card">
+                    <img
+                        src="workplace-images/Screenshot_20261025-022928.png"
+                        alt="Garments being arranged and finished at workstations"
+                        loading="lazy">
+
+                    <h3>Finishing & Preparation</h3>
+
+                    <p>
+                        Garments are prepared for the stages that follow
+                        construction and finishing.
+                    </p>
+                </article>
+
+
+                <!-- PHOTO 8 -->
+                <article class="gallery-card">
+                    <img
+                        src="workplace-images/Screenshot_20261025-023747.png"
+                        alt="Finished garments packed and arranged on storage shelves"
+                        loading="lazy">
+
+                    <h3>Finished Garments</h3>
+
+                    <p>
+                        Completed garments arranged in storage, ready
+                        for the next step in handling and supply.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- CLOSING SECTION -->
+        <section class="closing">
+            <p class="eyebrow">Let's Talk Business</p>
+
+            <h2>Have a garment requirement in mind?</h2>
+
+            <p>
+                Tell us about your requirements and get in touch with
+                Meta Garments to discuss your business needs.
             </p>
-        </div>
-    </section>
 
-    <section class="photo-card">
-        <img class="photo" src="workplace-images/garment-assembly.jpg"
-             alt="Garment components being assembled">
+            <a class="button" href="contact.html">
+                Discuss a Business Enquiry →
+            </a>
+        </section>
 
-        <div>
-            <div class="number">04 / ASSEMBLY</div>
-            <h2>Garment Assembly</h2>
-            <p class="description">
-                Individual garment components are joined and
-                prepared for the next stages of production.
-            </p>
-        </div>
-    </section>
+    </main>
 
-    <section class="photo-card">
-        <img class="photo" src="workplace-images/finishing.jpg"
-             alt="Garments undergoing finishing and pressing">
 
-        <div>
-            <div class="number">05 / FINISHING</div>
-            <h2>Finishing & Pressing</h2>
-            <p class="description">
-                Garments are pressed and finished to help achieve
-                a neat appearance before final inspection.
-            </p>
-        </div>
-    </section>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>
+            © <span id="year"></span> Meta Garments.
+            Built around your requirements, guided by your standards.
+        </p>
+    </footer>
 
-    <section class="photo-card">
-        <img class="photo" src="workplace-images/quality-check.jpg"
-             alt="Garments being checked during production">
 
-        <div>
-            <div class="number">06 / REVIEW</div>
-            <h2>Quality Review</h2>
-            <p class="description">
-                Garments can be reviewed for appearance,
-                measurements, stitching and finishing details
-                according to the applicable requirements.
-            </p>
-        </div>
-    </section>
-
-    <section class="photo-card">
-        <img class="photo" src="workplace-images/finished-stock.jpg"
-             alt="Finished garments arranged in storage">
-
-        <div>
-            <div class="number">07 / READY FOR DISPATCH</div>
-            <h2>Finished Garments & Storage</h2>
-            <p class="description">
-                Finished garments are organised and prepared
-                for packing, storage and onward dispatch.
-            </p>
-        </div>
-    </section>
-
-</main>
-
-<section class="closing">
-    <h2>Have a requirement in mind?</h2>
-
-    <p>
-        Tell us what your business needs. We welcome discussions
-        about garment specifications, customisation and supply.
-    </p>
-
-    <a class="button" href="contact.html">Discuss a Business Enquiry</a>
-</section>
-
-<footer>
-    Meta Garments · Built around your requirements, guided by your standards.
-</footer>
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>
