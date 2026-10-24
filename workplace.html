@@ -253,6 +253,35 @@
                 padding: 60px 6%;
             }
         }
+        .workplace-feature {
+    max-width: 1200px;
+    margin: 40px auto 70px;
+    padding: 0 24px;
+}
+
+.workplace-feature-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.workplace-feature-image img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 600px) {
+    .workplace-feature {
+        padding: 0 16px;
+    }
+
+    .workplace-feature-image img {
+        height: 280px;
+    }
+}
     </style>
 </head>
 
@@ -301,6 +330,15 @@
                 manufacturing and preparation.
             </p>
         </section>
+        <!-- MAIN WORKPLACE PHOTOGRAPH -->
+<section class="workplace-feature">
+    <div class="workplace-feature-image">
+        <img
+            src="workplace-main.jpg"
+            alt="Garment preparation at the Meta Garments workplace"
+        >
+    </div>
+</section>
 
 
         <!-- FACTORY PHOTO GALLERY -->
