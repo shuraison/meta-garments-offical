@@ -154,6 +154,30 @@
                 min-height: auto;
             }
         }
+        @media (max-width: 480px) {
+    header {
+        align-items: flex-start;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .contact-card {
+        min-width: 0;
+    }
+
+    .contact-link {
+        overflow-wrap: anywhere;
+    }
+}
     </style>
 </head>
 
