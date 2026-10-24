@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Workplace | Meta Garments</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #171717;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px 7%;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .logo {
+            color: #171717;
+            font-size: 21px;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav a {
+            color: #444444;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 13px;
+        }
+
+        .intro {
+            padding: 100px 7% 65px;
+            max-width: 1050px;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: #777777;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.08;
+            letter-spacing: -3px;
+            margin: 20px 0;
+        }
+
+        .intro p {
+            max-width: 680px;
+            font-size: 16px;
+            color: #666666;
+        }
+
+        .gallery {
+            padding: 20px 7% 100px;
+        }
+
+        .photo-card {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 55px;
+            align-items: center;
+            padding: 55px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .photo-card:nth-child(even) .photo {
+            order: 2;
+        }
+
+        .photo {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            background: #f3f3f3;
+            display: block;
+        }
+
+        .number {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #888888;
+        }
+
+        h2 {
+            font-size: 32px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin: 12px 0 18px;
+        }
+
+        .description {
+            font-size: 15px;
+            color: #666666;
+        }
+
+        .closing {
+            background: #f6f6f6;
+            padding: 75px 7%;
+            text-align: center;
+        }
+
+        .closing h2 {
+            font-size: 38px;
+        }
+
+        .closing p {
+            color: #666666;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #171717;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 24px;
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 25px 7%;
+            text-align: center;
+            color: #777777;
+            font-size: 12px;
+            border-top: 1px solid #eeeeee;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 12px 0 0;
+                display: inline-block;
+            }
+
+            .intro {
+                padding-top: 65px;
+            }
+
+            h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .photo-card {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 38px 0;
+            }
+
+            .photo-card:nth-child(even) .photo {
+                order: 0;
+            }
+
+            .photo {
+                height: 280px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="index.html">META GARMENTS</a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#collection">Collection</a>
+        <a href="index.html#customisation">Customisation</a>
+        <a href="index.html#about">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="intro">
+    <div class="eyebrow">Our Workplace</div>
+
+    <h1>The work behind every requirement.</h1>
+
+    <p>
+        Every garment passes through a series of practical steps,
+        from fabric selection and cutting to stitching, finishing
+        and packing. Explore the processes and working environments
+        behind garment production.
+    </p>
+</section>
+
+<main class="gallery">
+
+    <section class="photo-card">
+        <img class="photo" src="workplace-images/fabric-storage.jpg"
+             alt="Fabric rolls arranged in storage">
+
+        <div>
+            <div class="number">01 / MATERIALS</div>
+            <h2>Fabric Storage</h2>
+            <p class="description">
+                Fabric is stored and organised before it moves into
+                production. Suitable material selection is an
+                important part of meeting garment requirements.
+            </p>
+        </div>
+    </section>
+
+    <section class="photo-card">
+        <img class="photo" src="workplace-images/fabric-cutting.jpg"
+             alt="Fabric layers being cut">
+
+        <div>
+            <div class="number">02 / PREPARATION</div>
+            <h2>Fabric Cutting</h2>
+            <p class="description">
+                Fabric layers are prepared and cut into garment
+                components according to the required patterns
+                and measurements.
+            </p>
+        </div>
+    </section>
+
+    <section class="photo-card">
+        <img class="photo" src="workplace-images/stitching-unit.jpg"
+             alt="Garment stitching production floor">
+
+        <div>
+            <div class="number">03 / CONSTRUCTION</div>
+            <h2>Stitching Unit</h2>
+            <p class="description">
+                Cut components are assembled through stitching,
+                bringing the garment design together piece by piece.
+            </p>
+        </div>
+    </section>
+
+    <section class="photo-card">
+        <img class="photo" src="workplace-images/garment-assembly.jpg"
+             alt="Garment components being assembled">
+
+        <div>
+            <div class="number">04 / ASSEMBLY</div>
+            <h2>Garment Assembly</h2>
+            <p class="description">
+                Individual garment components are joined and
+                prepared for the next stages of production.
+            </p>
+        </div>
+    </section>
+
+    <section class="photo-card">
+        <img class="photo" src="workplace-images/finishing.jpg"
+             alt="Garments undergoing finishing and pressing">
+
+        <div>
+            <div class="number">05 / FINISHING</div>
+            <h2>Finishing & Pressing</h2>
+            <p class="description">
+                Garments are pressed and finished to help achieve
+                a neat appearance before final inspection.
+            </p>
+        </div>
+    </section>
+
+    <section class="photo-card">
+        <img class="photo" src="workplace-images/quality-check.jpg"
+             alt="Garments being checked during production">
+
+        <div>
+            <div class="number">06 / REVIEW</div>
+            <h2>Quality Review</h2>
+            <p class="description">
+                Garments can be reviewed for appearance,
+                measurements, stitching and finishing details
+                according to the applicable requirements.
+            </p>
+        </div>
+    </section>
+
+    <section class="photo-card">
+        <img class="photo" src="workplace-images/finished-stock.jpg"
+             alt="Finished garments arranged in storage">
+
+        <div>
+            <div class="number">07 / READY FOR DISPATCH</div>
+            <h2>Finished Garments & Storage</h2>
+            <p class="description">
+                Finished garments are organised and prepared
+                for packing, storage and onward dispatch.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<section class="closing">
+    <h2>Have a requirement in mind?</h2>
+
+    <p>
+        Tell us what your business needs. We welcome discussions
+        about garment specifications, customisation and supply.
+    </p>
+
+    <a class="button" href="contact.html">Discuss a Business Enquiry</a>
+</section>
+
+<footer>
+    Meta Garments · Built around your requirements, guided by your standards.
+</footer>
+
+</body>
+</html>
