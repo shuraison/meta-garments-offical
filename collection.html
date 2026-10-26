@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Collection | Meta Garments</title>
+
+    <meta name="description" content="Explore selected formal and casual shirt designs from Meta Garments. Discuss your garment manufacturing requirements with us.">
+
+    <style>
+        :root {
+            --black: #171717;
+            --grey: #777777;
+            --line: #e8e8e8;
+            --soft: #f7f7f7;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1320px, 90%);
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+
+        header {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .header-inner {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 12px;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* INTRODUCTION */
+
+        .page-intro {
+            padding: 76px 0 42px;
+        }
+
+        .heading-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(32px, 4vw, 46px);
+            font-weight: 500;
+            letter-spacing: -1.4px;
+            line-height: 1.2;
+        }
+
+        /* SUBTLE PRICE OFFER */
+
+        .price-offer {
+            flex-shrink: 0;
+            border: 1px solid #dedede;
+            padding: 9px 13px;
+            font-size: 11px;
+            color: #555555;
+            line-height: 1.6;
+        }
+
+        .price-offer strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .price-offer small {
+            display: block;
+            color: var(--grey);
+            font-size: 10px;
+        }
+
+        .intro-text {
+            max-width: 720px;
+            color: var(--grey);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* COLLECTION SECTIONS */
+
+        .collection-section {
+            padding: 38px 0 48px;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 23px;
+        }
+
+        .section-heading h2 {
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        .section-heading p {
+            color: var(--grey);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .scroll-hint {
+            color: var(--grey);
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        /* HORIZONTAL SCROLLING ROW */
+
+        .product-row {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 218px;
+            gap: 17px;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 15px;
+            scrollbar-width: thin;
+            scrollbar-color: #c8c8c8 #f4f4f4;
+        }
+
+        .product-row::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .product-row::-webkit-scrollbar-track {
+            background: #f4f4f4;
+        }
+
+        .product-row::-webkit-scrollbar-thumb {
+            background: #c8c8c8;
+            border-radius: 10px;
+        }
+
+        .product-card,
+        .casual-card {
+            min-width: 0;
+            scroll-snap-align: start;
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            background: var(--soft);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img,
+        .casual-card:hover .product-image img {
+            transform: scale(1.025);
+        }
+
+        .product-code {
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+        }
+
+        .product-description {
+            margin-top: 3px;
+            color: var(--grey);
+            font-size: 11px;
+        }
+
+        /* CASUAL MAIN IMAGE + COLOUR IMAGE */
+
+        .casual-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+
+        .casual-images .product-image {
+            aspect-ratio: 3 / 4;
+        }
+
+        .image-label {
+            margin-top: 5px;
+            color: var(--grey);
+            font-size: 9px;
+            letter-spacing: 0.3px;
+        }
+
+        /* PRIVACY NOTE */
+
+        .privacy-note {
+            border-top: 1px solid var(--line);
+            padding: 35px 0 40px;
+        }
+
+        .privacy-note h2 {
+            margin-bottom: 10px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .privacy-note p {
+            max-width: 950px;
+            color: var(--grey);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* CONTACT */
+
+        .contact-strip {
+            padding: 34px 0;
+            background: var(--soft);
+        }
+
+        .contact-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .contact-inner h2 {
+            font-size: 19px;
+            font-weight: 500;
+        }
+
+        .contact-inner p {
+            margin-top: 4px;
+            color: var(--grey);
+            font-size: 12px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 11px 17px;
+            border: 1px solid var(--black);
+            font-size: 12px;
+            white-space: nowrap;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .contact-button:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 22px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            color: var(--grey);
+            font-size: 11px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+            .header-inner {
+                min-height: 68px;
+                flex-wrap: wrap;
+                padding: 14px 0;
+                gap: 12px;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            nav {
+                gap: 14px;
+                font-size: 11px;
+            }
+
+            .page-intro {
+                padding: 48px 0 32px;
+            }
+
+            .heading-row {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 13px;
+            }
+
+            .collection-section {
+                padding: 30px 0 36px;
+            }
+
+            .section-heading h2 {
+                font-size: 19px;
+            }
+
+            .product-row {
+                grid-auto-columns: 172px;
+                gap: 12px;
+            }
+
+            .contact-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">META GARMENTS</a>
+
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About Us</a>
+                <a href="workplace.html">Our Workplace</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- COLLECTION INTRODUCTION AND PRICE -->
+
+        <section class="page-intro">
+            <div class="container">
+
+                <div class="heading-row">
+
+                    <h1>Our Collection</h1>
+
+                    <div class="price-offer">
+                        Shirts from <strong>$3*</strong>
+                        <small>*Excluding shipping costs</small>
+                    </div>
+
+                </div>
+
+                <p class="intro-text">
+                    Explore a selected range of formal and casual shirt
+                    designs representing different styles, colours, and
+                    product requirements. For your own business requirements,
+                    we welcome a discussion about your specifications.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- WHITE FORMAL SHIRTS -->
+
+        <section class="collection-section" id="white">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>White — Formal Shirts</h2>
+                        <p>Selected white formal shirt designs.</p>
+                    </div>
+
+                    <span class="scroll-hint">Scroll to explore &rarr;</span>
+                </div>
+
+                <div class="product-row">
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD01.jpg" alt="White formal shirt WD01" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD01</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD02.jpg" alt="White formal shirt WD02" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD02</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD03.jpg" alt="White formal shirt WD03" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD03</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD04.jpg" alt="White formal shirt WD04" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD04</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD05.jpg" alt="White formal shirt WD05" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD05</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD06.jpg" alt="White formal shirt WD06" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD06</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD07.jpg" alt="White formal shirt WD07" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD07</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD08.jpg" alt="White formal shirt WD08" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD08</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD09.jpg" alt="White formal shirt WD09" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD09</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD10.jpg" alt="White formal shirt WD10" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD10</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD11.jpg" alt="White formal shirt WD11" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD11</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/white/WD12.jpg" alt="White formal shirt WD12" loading="lazy">
+                        </div>
+                        <h3 class="product-code">WD12</h3>
+                        <p class="product-description">White formal shirt</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- BLUE FORMAL SHIRTS -->
+
+        <section class="collection-section" id="blue">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Blue — Formal Shirts</h2>
+                        <p>Selected blue formal shirt designs.</p>
+                    </div>
+
+                    <span class="scroll-hint">Scroll to explore &rarr;</span>
+                </div>
+
+                <div class="product-row">
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD01.jpg" alt="Blue formal shirt BD01" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD01</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD02.jpg" alt="Blue formal shirt BD02" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD02</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD03.jpg" alt="Blue formal shirt BD03" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD03</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD04.jpg" alt="Blue formal shirt BD04" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD04</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD05.jpg" alt="Blue formal shirt BD05" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD05</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD06.jpg" alt="Blue formal shirt BD06" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD06</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD07.jpg" alt="Blue formal shirt BD07" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD07</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD08.jpg" alt="Blue formal shirt BD08" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD08</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD09.jpg" alt="Blue formal shirt BD09" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD09</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD10.jpg" alt="Blue formal shirt BD10" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD10</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD11.jpg" alt="Blue formal shirt BD11" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD11</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="images/blue/BD12.jpg" alt="Blue formal shirt BD12" loading="lazy">
+                        </div>
+                        <h3 class="product-code">BD12</h3>
+                        <p class="product-description">Blue formal shirt</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CASUAL SHIRTS: 12 DESIGNS, EACH WITH A COLOUR PHOTO -->
+
+        <section class="collection-section" id="casual">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Casual Shirts</h2>
+                        <p>Each design is shown with its corresponding colour variations.</p>
+                    </div>
+
+                    <span class="scroll-hint">Scroll to explore &rarr;</span>
+                </div>
+
+                <div class="product-row">
+
+                    <!-- DD01 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD01.jpg" alt="Casual shirt DD01 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD01 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD01A.jpg" alt="DD01 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD01A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD01</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD02 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD02.jpg" alt="Casual shirt DD02 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD02 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD02A.jpg" alt="DD02 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD02A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD02</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD03 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD03.jpg" alt="Casual shirt DD03 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD03 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD03A.jpg" alt="DD03 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD03A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD03</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD04 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD04.jpg" alt="Casual shirt DD04 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD04 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD04A.jpg" alt="DD04 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD04A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD04</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD05 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD05.jpg" alt="Casual shirt DD05 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD05 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD05A.jpg" alt="DD05 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD05A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD05</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD06 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD06.jpg" alt="Casual shirt DD06 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD06 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD06A.jpg" alt="DD06 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD06A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD06</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD07 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD07.jpg" alt="Casual shirt DD07 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD07 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD07A.jpg" alt="DD07 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD07A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD07</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD08 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD08.jpg" alt="Casual shirt DD08 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD08 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD08A.jpg" alt="DD08 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD08A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD08</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD09 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD09.jpg" alt="Casual shirt DD09 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD09 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD09A.jpg" alt="DD09 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD09A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD09</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD10 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD10.jpg" alt="Casual shirt DD10 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD10 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD10A.jpg" alt="DD10 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD10A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD10</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD11 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD11.jpg" alt="Casual shirt DD11 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD11 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD11A.jpg" alt="DD11 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD11A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD11</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                    <!-- DD12 -->
+                    <article class="casual-card">
+                        <div class="casual-images">
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD12.jpg" alt="Casual shirt DD12 main catalogue photograph" loading="lazy">
+                                </div>
+                                <p class="image-label">DD12 · Main</p>
+                            </div>
+                            <div>
+                                <div class="product-image">
+                                    <img src="images/casual/DD12A.jpg" alt="DD12 colour variations" loading="lazy">
+                                </div>
+                                <p class="image-label">DD12A · Colours</p>
+                            </div>
+                        </div>
+                        <h3 class="product-code">DD12</h3>
+                        <p class="product-description">Casual shirt</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- EXACT PRIVACY STATEMENT -->
+
+        <section class="privacy-note">
+            <div class="container">
+
+                <h2>A Note on Our Collection</h2>
+
+                <p>
+                    This collection represents only a small selection of our work; our complete catalogue remains private.
+                    The designs displayed here have been selected for publication with permission from the respective clients.
+                    Many additional designs and manufacturing projects cannot be publicly displayed due to confidentiality.
+                    The brands featured represent examples of our work, not the entirety of our client relationships.
+                    Our manufacturing experience extends across diverse brands, businesses, and product requirements.
+                    We value every client's privacy and extend the same discretion to every partnership.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT CALL TO ACTION -->
+
+        <section class="contact-strip">
+            <div class="container contact-inner">
+
+                <div>
+                    <h2>Have a specific requirement?</h2>
+                    <p>Let's discuss the right solution for your business.</p>
+                </div>
+
+                <a class="contact-button" href="index.html#contact">
+                    Discuss Your Requirements &rarr;
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-inner">
+            <span>&copy; 2026 Meta Garments. All rights reserved.</span>
+            <a href="index.html">Back to Home &uarr;</a>
+        </div>
+    </footer>
+
+</body>
+</html>
