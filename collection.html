@@ -131,8 +131,6 @@ h1 {
     line-height: 1.9;
     margin-bottom: 8px;
 }
-        }
-
         /* COLLECTION SECTIONS */
 
         .collection-section {
@@ -323,6 +321,68 @@ h1 {
             gap: 15px;
             color: var(--grey);
             font-size: 11px;
+        }
+
+        /* FIXED THUMBNAIL LAYOUT: keep all catalogue images compact */
+        .product-row {
+            display: grid !important;
+            grid-auto-flow: column !important;
+            grid-auto-columns: 218px !important;
+            gap: 17px;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto !important;
+            overflow-y: hidden;
+            align-items: start;
+        }
+
+        .product-card,
+        .casual-card {
+            width: 218px;
+            min-width: 0;
+            max-width: 218px;
+            align-self: start;
+        }
+
+        .product-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        .casual-images {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 5px;
+            width: 100%;
+        }
+
+        .casual-images .product-image {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+        }
+
+        @media (max-width: 650px) {
+            .product-row {
+                grid-auto-columns: 172px !important;
+                gap: 12px;
+            }
+
+            .product-card,
+            .casual-card {
+                width: 172px;
+                max-width: 172px;
+            }
         }
 
         /* MOBILE */
